@@ -8,6 +8,7 @@ import { loginSchemaValidation } from "../../validation/LoginSchema";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { styles } from "./styles";
 import { user } from "../../constants/usersInDatabase";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormData {
     email: string;
@@ -15,6 +16,8 @@ interface LoginFormData {
 }
 
 const LoginScreen = () => {
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -25,10 +28,10 @@ const LoginScreen = () => {
         resolver: yupResolver(loginSchemaValidation),
     });
 
-    const onSubmit: SubmitHandler<LoginFormData> = (data) => {
+    const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
         if (data.email === user.email && data.password === user.password) {
-            console.log(true);
-            localStorage.setItem("token", "ekjbvhwbgenvwjbtvbklrbeqjb");
+            await localStorage.setItem("token", "ekjbvhwbgenvwjbtvbklrbeqjb");
+            navigate(0);
         } else {
             setError('email', { type: 'custom', message: 'invalid email' });
             setError('password', { type: 'custom', message: 'invalid password' });
@@ -40,6 +43,7 @@ const LoginScreen = () => {
             <Typography variant="h4">Log in</Typography>
 
             <Box sx={styles.form} component="form" onSubmit={handleSubmit(onSubmit)}>
+
                 <TextField
                     {...register("email")}
                     sx={styles.input}
