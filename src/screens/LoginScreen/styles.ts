@@ -1,6 +1,6 @@
 export const styles = {
     conteiner: {
-        minWidth: "550px",
+        minWidth: "600px",
         width: "100%",
         display: "flex",
         flexDirection: "column",

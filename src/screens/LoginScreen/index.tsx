@@ -38,6 +38,10 @@ const LoginScreen = () => {
         }
     };
 
+    const goToSignInScreen = () => {
+        navigate("signin");
+    }
+
     return (
         <Box sx={styles.conteiner}>
             <Typography variant="h4">Log in</Typography>
@@ -67,7 +71,7 @@ const LoginScreen = () => {
                     <Button type="submit" variant="contained">
                         Log in
                     </Button>
-                    <Button variant="outlined">
+                    <Button variant="outlined" onClick={goToSignInScreen} >
                         Sign in
                     </Button>
                 </Box>
