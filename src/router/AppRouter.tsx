@@ -15,6 +15,7 @@ const AppRouter = () => {
                 <Route path='/' element={<PublicRoot><LoginScreen /></PublicRoot>} />
                 <Route path='/signin' element={<PublicRoot><SigninScreen /></PublicRoot>} />
                 <Route path='/' element={<PrivateRoot><HomeScreen /></PrivateRoot>} />
+                <Route path='*' element={<h1>ІДИ НА ХУЙ</h1>} />
             </Routes>
         </Router>
     )

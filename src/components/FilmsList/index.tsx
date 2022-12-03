@@ -9,6 +9,7 @@ interface FilmsListProps {
 }
 
 const FilmsList: React.FC<FilmsListProps> = ({ films, allGenres }) => {
+    // console.log(films);
     return (
         <Box display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={5}>
             {films &&

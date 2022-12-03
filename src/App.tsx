@@ -2,12 +2,23 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import AppRouter from './router/AppRouter';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true
+    }
+  }
+})
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Header />
-      <AppRouter />
+      <QueryClientProvider client={client}>
+        <Header />
+        <AppRouter />
+      </QueryClientProvider>
     </div>
   );
 }

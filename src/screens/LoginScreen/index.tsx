@@ -44,10 +44,8 @@ const LoginScreen = () => {
 
     return (
         <Box sx={styles.conteiner}>
-            <Typography variant="h4">Log in</Typography>
-
             <Box sx={styles.form} component="form" onSubmit={handleSubmit(onSubmit)}>
-
+            <Typography align="center" sx={styles.title} variant="h4">Log in</Typography>
                 <TextField
                     {...register("email")}
                     sx={styles.input}
