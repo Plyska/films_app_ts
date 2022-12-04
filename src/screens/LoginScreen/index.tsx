@@ -22,7 +22,6 @@ const LoginScreen = () => {
         register,
         handleSubmit,
         setError,
-        watch,
         formState: { errors },
     } = useForm<LoginFormData>({
         resolver: yupResolver(loginSchemaValidation),
@@ -39,7 +38,7 @@ const LoginScreen = () => {
     };
 
     const goToSignInScreen = () => {
-        navigate("signin");
+        navigate("/signin");
     }
 
     return (

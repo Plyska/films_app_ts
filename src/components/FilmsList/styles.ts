@@ -11,7 +11,8 @@ export const styles = {
         display: "flex"
     },
     genre: {
-        margin: "5px"
+        margin: "5px",
+        color: "#fff"
     },
     director: {
         margin: "5px",

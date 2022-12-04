@@ -3,8 +3,11 @@ import { getMovies } from "../../api/getMovies";
 import { getGenres } from "../../api/getGenres";
 import { Film, Genre } from "./types";
 import FilmsList from "../../components/FilmsList";
+import Carousel from "../../components/Carousel"
 // import { useQuery } from "react-query";
 // import InfiniteScroll from 'react-infinite-scroll-component';
+
+import Box from "@mui/material/Box";
 
 const COUNT = 20;
 
@@ -27,11 +30,11 @@ const HomeScreen = () => {
     setAllGenres(res.genres);
   };
 
-  function getBodyScrollTop() { 
-    const el = document.scrollingElement || document.documentElement 
-    // setScrollTop(el.scrollTop);
-    return el.scrollTop 
-  }
+  // function getBodyScrollTop() { 
+  //   const el = document.scrollingElement || document.documentElement 
+  //   setScrollTop(el.scrollTop);
+  //   return el.scrollTop 
+  // }
 
   // useEffect(() => {
   //   const onScroll = (e: any) => {
@@ -77,6 +80,7 @@ const HomeScreen = () => {
         hasMore={true}
         loader={<h4>Loading...</h4>}
       > */}
+      <Carousel />
       <FilmsList films={films} allGenres={allGenres} />
       {/* </InfiniteScroll> */}
     </div>
