@@ -15,7 +15,7 @@ interface FilmCardProps {
 
 const FilmCard: React.FC<FilmCardProps> = ({ film, allGenres }) => {
   const [filmGenres, setFilmGenres] = useState<Array<Genre> | []>([]);
-  const { genre_ids, id, release_date, title, overview } = film;
+  const { genre_ids, id, release_date, title, overview, vote_average } = film;
   const [directors, setDirectors] = useState<Array<Director> | []>([]);
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [actors, setActors] = useState([]);
@@ -71,6 +71,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, allGenres }) => {
           writers={writers}
           title={title}
           overview={overview}
+          IMDB={vote_average}
         />
       </Box>
       <Box sx={styles.genresBox}>
