@@ -30,7 +30,8 @@ const LoginScreen = () => {
     const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
         if (data.email === user.email && data.password === user.password) {
             await localStorage.setItem("token", "ekjbvhwbgenvwjbtvbklrbeqjb");
-            navigate(0);
+            await localStorage.setItem("userName", user.name);
+            navigate("/");
         } else {
             setError('email', { type: 'custom', message: 'invalid email' });
             setError('password', { type: 'custom', message: 'invalid password' });

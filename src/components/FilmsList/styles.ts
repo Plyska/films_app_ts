@@ -43,5 +43,10 @@ export const styles = {
     icon: {
         color: "#fff",
         fontSize: "38px"
+    },
+    filmInfo: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
     }
 }

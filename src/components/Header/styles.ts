@@ -14,5 +14,9 @@ export const styles = {
     },
     title: {
         cursor: "pointer"
+    },
+    authBox: {
+        display: "flex",
+        alignItems: "center",
     }
 }

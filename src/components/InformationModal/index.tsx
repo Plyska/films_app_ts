@@ -9,7 +9,6 @@ import { TransitionProps } from "@mui/material/transitions";
 import Button from "@mui/material/Button";
 import { styles } from "./styles";
 import { Actor, Writer } from "../../screens/HomeScreen/types";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
 import ThumbDownOffAltTwoToneIcon from "@mui/icons-material/ThumbDownOffAltTwoTone";

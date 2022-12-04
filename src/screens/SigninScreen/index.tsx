@@ -36,14 +36,9 @@ const SigninScreen = () => {
     });
 
     const onSubmit: SubmitHandler<SignupFormData> = async (data) => {
-        console.log(data);
-        // if (data.email === user.email && data.password === user.password) {
-        //     await localStorage.setItem("token", "ekjbvhwbgenvwjbtvbklrbeqjb");
-        //     navigate(0);
-        // } else {
-        //     setError('email', { type: 'custom', message: 'invalid email' });
-        //     setError('password', { type: 'custom', message: 'invalid password' });
-        // }
+            await localStorage.setItem("token", "ekjbvhwbgenvwjbtvbklrbeqjb");
+            await localStorage.setItem("userName", data.name);
+            navigate("/");
     };
 
     const goToLoginScreen = () => {

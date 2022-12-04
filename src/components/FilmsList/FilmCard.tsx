@@ -57,13 +57,13 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, allGenres }) => {
           src={`${process.env.REACT_APP_IMG_URI}${film.poster_path}`}
         />
         <Typography sx={styles.title}>{title}</Typography>
-        <IconButton
+        {localStorage.getItem("token") && <IconButton
           aria-label="info"
           sx={styles.iconButton}
           onClick={openModal}
         >
           <InfoOutlinedIcon sx={styles.icon} />
-        </IconButton>
+        </IconButton>}
         <InformationModal
           open={isOpenModal}
           setIsOpenModal={setIsOpenModal}
@@ -74,29 +74,35 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, allGenres }) => {
           IMDB={vote_average}
         />
       </Box>
-      <Box sx={styles.genresBox}>
-        {filmGenres.length > 0 && filmGenres.map((genre: Genre) => {
-          if (genre) {
-            return (
-              <Typography sx={styles.genre} key={genre.id}>
-                {genre.name}
+      {
+        localStorage.getItem("token") && (
+          <Box sx={styles.filmInfo}>
+            <Box sx={styles.genresBox}>
+              {filmGenres.length > 0 && filmGenres.map((genre: Genre) => {
+                if (genre) {
+                  return (
+                    <Typography sx={styles.genre} key={genre.id}>
+                      {genre.name}
+                    </Typography>
+                  )
+                }
+              })}
+            </Box>
+            <Box sx={styles.genresBox}>
+              {directors && directors.map((director: Director) => (
+                <Typography sx={styles.director} key={director.id} variant="h5">
+                  {director.name}
+                </Typography>
+              ))}
+            </Box>
+            <Box sx={styles.genresBox}>
+              <Typography sx={styles.year} variant="h6">
+                {release_date}
               </Typography>
-            )
-          }
-        })}
-      </Box>
-      <Box sx={styles.genresBox}>
-        {directors && directors.map((director: Director) => (
-          <Typography sx={styles.director} key={director.id} variant="h5">
-            {director.name}
-          </Typography>
-        ))}
-      </Box>
-      <Box sx={styles.genresBox}>
-        <Typography sx={styles.year} variant="h6">
-          {release_date}
-        </Typography>
-      </Box>
+            </Box>
+          </Box>
+        )
+      }
     </Box>
   );
 };
