@@ -74,14 +74,18 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, allGenres }) => {
         />
       </Box>
       <Box sx={styles.genresBox}>
-        {filmGenres.map((genre: Genre) => (
-          <Typography sx={styles.genre} key={genre.id}>
-            {genre.name}
-          </Typography>
-        ))}
+        {filmGenres.length > 0 && filmGenres.map((genre: Genre) => {
+          if (genre) {
+            return (
+              <Typography sx={styles.genre} key={genre.id}>
+                {genre.name}
+              </Typography>
+            )
+          }
+        })}
       </Box>
       <Box sx={styles.genresBox}>
-        {directors.map((director: Director) => (
+        {directors && directors.map((director: Director) => (
           <Typography sx={styles.director} key={director.id} variant="h5">
             {director.name}
           </Typography>

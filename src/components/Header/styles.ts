@@ -11,5 +11,8 @@ export const styles = {
     },
     button: {
         margin: "0 15px 0 15px"
+    },
+    title: {
+        cursor: "pointer"
     }
 }
