@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { styles } from "./styles";
 import Typography from "@mui/material/Typography";
+import { MockFilm } from "../../constants/dataForSlider";
+
 
 interface SlideProps {
-    film: any;
+    film: MockFilm;
 }
 
 const Slide: React.FC<SlideProps> = ({ film }) => {
     const getText = () => {
-        const textArr = [...film.plot];
+        const textArr = film.plot.split("");
         textArr.splice(50);
         return textArr.join("") + "...";
     };

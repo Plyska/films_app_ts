@@ -2,14 +2,15 @@ import React from "react";
 import { Film, Genre } from "../../screens/HomeScreen/types";
 import Box from "@mui/material/Box";
 import FilmCard from "./FilmCard";
+import { useAppContext } from "../../context/AppContext";
 
 interface FilmsListProps {
-    films: Array<Film> | [];
     allGenres: Array<Genre> | [];
 }
 
-const FilmsList: React.FC<FilmsListProps> = ({ films, allGenres }) => {
-    // console.log(films);
+const FilmsList: React.FC<FilmsListProps> = ({ allGenres }) => {
+    const { parameters } = useAppContext();
+    const { films } = parameters
     return (
         <Box display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={5}>
             {films &&

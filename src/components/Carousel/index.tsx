@@ -7,9 +7,6 @@ import { styles } from "./styles";
 import { dataForSlider } from "../../constants/dataForSlider";
 import Slide from "./Slide";
 
-
-type Props = {}
-
 const settings = {
     dots: true,
     infinite: true,
@@ -20,7 +17,7 @@ const settings = {
     autoplaySpeed: 2000,
 };
 
-const Carousel = (props: Props) => {
+const Carousel = () => {
 
     return (
         <Box sx={styles.container}>

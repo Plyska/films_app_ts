@@ -2,7 +2,14 @@ import Spiderman from "../imgs/spiderman.jpeg";
 import Ironman from "../imgs/ironman.jpeg";
 import Daredevil from "../imgs/daredevil.jpeg";
 
-export const dataForSlider = [
+export interface MockFilm {
+  id: number;
+  title: string;
+  path: string;
+  plot: string;
+}
+
+export const dataForSlider: Array<MockFilm> = [
   {
     id: 1,
     title: "Spider-man",
